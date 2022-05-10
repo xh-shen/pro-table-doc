@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 11:54:15å
  * @LastEditors: shen
- * @LastEditTime: 2022-05-09 20:36:36
+ * @LastEditTime: 2022-05-10 09:39:33
  * @Description: 
 -->
 <script setup lang="ts">
@@ -20,7 +20,7 @@ const { theme } = useData();
 <template>
   <header :class="{ navbar: true, 'has-sidebar': hasSidebar }">
     <div class="navbar-wrapper">
-      <div class="container">
+      <div class="header-container">
         <div class="logo-container">
           <a href="/">
             <img class="logo" src="/images/logo_big.png" alt="shen" />
@@ -42,7 +42,7 @@ const { theme } = useData();
   align-items: center;
   height: var(--header-height);
   > a {
-    height: 32px;
+    height: 28px;
     width: 128px;
   }
   .logo {

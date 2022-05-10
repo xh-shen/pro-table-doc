@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 11:56:22
  * @LastEditors: shen
- * @LastEditTime: 2022-05-09 13:28:14
+ * @LastEditTime: 2022-05-10 11:03:03
  * @Description:
  */
 import { computed } from "vue";
@@ -59,4 +59,20 @@ export function getSidebarConfig(sidebar: Sidebar, path: string) {
     }
   }
   return [];
+}
+
+export function isSideBarGroup(item) {
+  return item.children !== undefined;
+}
+
+export function getFlatSideBarLinks(sidebar) {
+  return sidebar.reduce((links, item) => {
+    if (item.link) {
+      links.push({ text: item.text, link: removeExtention(item.link) });
+    }
+    if (isSideBarGroup(item)) {
+      links = [...links, ...getFlatSideBarLinks(item.children)];
+    }
+    return links;
+  }, []);
 }

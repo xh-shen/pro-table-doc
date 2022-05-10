@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 12:53:21
  * @LastEditors: shen
- * @LastEditTime: 2022-05-09 21:46:20
+ * @LastEditTime: 2022-05-10 16:03:19
  * @Description:
  */
 const guideSidebars = [
@@ -30,25 +30,43 @@ const guideSidebars = [
   },
 ];
 
-const exampleSidebars = [
+const docSidebars = [
   {
-    text: "基本用法",
-    link: "/example/basic",
+    text: "文档",
+    children: [
+      {
+        text: "API",
+        link: "/doc/api",
+      },
+    ],
   },
+];
+
+const demoSidebars = [
   {
-    text: "分页",
-    link: "/example/pagination",
-  },
-  {
-    text: "拖拽",
-    link: "/example/dragable",
+    text: "基础",
+    children: [
+      {
+        text: "基本用法",
+        link: "/demo/basic",
+      },
+      {
+        text: "分页",
+        link: "/demo/pagination",
+      },
+      {
+        text: "拖拽",
+        link: "/demo/dragable",
+      },
+    ],
   },
 ];
 
 const getSidebars = () => {
   return {
     "/guide/": guideSidebars,
-    "/example/": exampleSidebars,
+    "/doc/": docSidebars,
+    "/demo/": demoSidebars,
   };
 };
 

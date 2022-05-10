@@ -11,7 +11,8 @@
     "noImplicitAny": false,
     "skipLibCheck": true,
     "paths": {
-      "@shene/pro-table": ["./core/src"]
+      "@shene/pro-table": ["./core/src"],
+      "~/*": ["./.vitepress/vitepress/*"]
     },
   },
   "vueCompilerOptions": {

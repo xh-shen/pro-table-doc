@@ -8,11 +8,10 @@
   @include with-bg;
   position: relative;
   // border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px var(--border-color);
   padding: 0 12px 0 24px;
   height: var(--header-height);
   top: 0;
-  box-shadow: 0 2px 8px #f0f1f2;
-  z-index: 1111;
 
   @include respond-to('md') {
     padding: 0 12px 0 32px;
@@ -22,17 +21,25 @@
     padding: 0 32px;
   }
 
-  .container {
+  .header-container {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: var(--vp-screen-max-width);
 
     .content {
       display: flex;
       justify-content: flex-end;
       align-items: center;
       flex-grow: 1;
+    }
+
+    @include respond-to('xxl') {
+      max-width: calc(var(--vp-screen-max-width));
+    }
+
+    @include respond-to('max') {
+      // 36 = 2 * 18 for each side.
+      max-width: calc(var(--vp-screen-max-width));
     }
   }
 

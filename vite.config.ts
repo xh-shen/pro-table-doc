@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 08:30:15
  * @LastEditors: shen
- * @LastEditTime: 2022-05-09 19:25:54
+ * @LastEditTime: 2022-05-10 20:04:09
  * @Description:
  */
 import path from "path";
@@ -11,6 +11,7 @@ import { defineConfig, loadEnv } from "vite";
 import UnoCSS from "unocss/vite";
 import mkcert from "vite-plugin-mkcert";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import { MarkdownTransform } from "./.vitepress/plugins/markdown-transform";
 
 export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -26,6 +27,10 @@ export default defineConfig(async ({ mode }) => {
     resolve: {
       alias: [
         {
+          find: "~/",
+          replacement: `${path.resolve(__dirname, "./.vitepress/vitepress")}/`,
+        },
+        {
           find: /^@shene\/pro-table$/,
           replacement: path.resolve(__dirname, "./core/src"),
         },
@@ -35,7 +40,7 @@ export default defineConfig(async ({ mode }) => {
         },
       ],
     },
-    plugins: [vueJsx(), UnoCSS(), Inspect(), mkcert()],
+    plugins: [vueJsx(), UnoCSS(), MarkdownTransform(), Inspect(), mkcert()],
     optimizeDeps: {
       include: optimizeDeps,
     },

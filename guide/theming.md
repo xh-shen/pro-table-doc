@@ -4,4 +4,4 @@ title: 主题
 
 # 主题
 
-Pro Table 组件 **默认** 使用中文，如果你希望使用其他语言，你可以参考下面的方案
+Pro Table 组件 **默认** 主题色和 **Element Plus** 相同

@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 16:31:00
  * @LastEditors: shen
- * @LastEditTime: 2022-05-09 16:50:24
+ * @LastEditTime: 2022-05-10 10:25:26
  * @Description: 
 -->
 <script setup lang="ts">
@@ -10,7 +10,7 @@ import { computed, onUpdated, watch, ref, nextTick } from "vue";
 import nprogress from "nprogress";
 import { useData, useRoute } from "vitepress";
 import useSidebar from "../hooks/useSidebar";
-import VDocContent from "./doc-content.vue";
+import VDocContent from "./content/doc-content.vue";
 import VNotFound from "../components/common/not-found.vue";
 
 const { frontmatter } = useData();

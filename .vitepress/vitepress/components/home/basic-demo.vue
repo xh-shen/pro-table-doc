@@ -2,6 +2,7 @@
   <div class="home-demo container">
     <pro-table
       ref="tableRef"
+      bordered
       :columns="columns"
       :data-source="dataSource"
       :pagination="false"
@@ -12,13 +13,7 @@
       @resizeColumn="handleResize"
     >
       <template #footer>
-        <div class="table-footer">
-          复杂表格依旧流畅如初；
-          <br />
-          姓名、年龄列宽可以拖动调整哦，点击年龄排序，体验动画效果，然后快速拖动到最右侧，快速输入编辑吧；
-          <br />
-          更多功能点击右上角查看更多示例！！！
-        </div>
+        <div class="table-footer">更多功能点击右上角查看更多示例！！！</div>
       </template>
       <template #expandedRowRender="{ record }">
         <p style="margin: 0">
