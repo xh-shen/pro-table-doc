@@ -1,11 +1,9 @@
 <template>
-  <pro-table
-    :columns="columns"
-    :sticky="{ offsetHeader: 55 }"
-    :scroll="{ y: 1000 }"
-    :pagination="false"
-    :data-source="data"
-  ></pro-table>
+  <pro-table :columns="columns" :pagination="false" :data-source="data">
+    <template #footer>
+      <span style="color: blue">Footer</span>
+    </template>
+  </pro-table>
 </template>
 
 <script setup lang="ts">
@@ -30,7 +28,7 @@ const columns = [
   },
 ];
 const data: DataItem[] = [];
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < 4; i++) {
   data.push({
     key: i,
     date: "2016-05-03",

@@ -1,3 +1,10 @@
+/*
+ * @Author: shen
+ * @Date: 2022-05-10 19:45:28
+ * @LastEditors: shen
+ * @LastEditTime: 2022-05-11 08:09:47
+ * @Description:
+ */
 import path from "path";
 
 import type { Plugin } from "vite";
@@ -10,8 +17,8 @@ export function MarkdownTransform(): Plugin {
       if (!id.endsWith(".md")) return;
 
       const componentId = path.basename(id, ".md");
-      const scriptSetups = `const demos = import.meta.globEager('../examples/${componentId}/*.vue')`;
-      return combineMarkdown(code, combineScriptSetup(scriptSetups));
+      const examples = `const demos = import.meta.globEager('../examples/${componentId}/*.vue')`;
+      return combineMarkdown(code, combineScriptSetup(examples));
     },
   };
 }

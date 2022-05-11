@@ -1,9 +1,8 @@
 <template>
   <pro-table
     :columns="columns"
-    :sticky="{ offsetHeader: 55 }"
-    :scroll="{ y: 1000 }"
     :pagination="false"
+    :scroll="{ x: 1000 }"
     :data-source="data"
   ></pro-table>
 </template>
@@ -19,6 +18,8 @@ const columns = [
   {
     title: "Date",
     dataIndex: "date",
+    width: 120,
+    fixed: true,
   },
   {
     title: "Full Name",
@@ -28,9 +29,15 @@ const columns = [
     title: "Address",
     dataIndex: "address",
   },
+  {
+    title: "Action",
+    width: 120,
+    fixed: "right",
+    customRender: () => "action",
+  },
 ];
 const data: DataItem[] = [];
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < 4; i++) {
   data.push({
     key: i,
     date: "2016-05-03",

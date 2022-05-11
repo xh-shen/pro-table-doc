@@ -1,7 +1,6 @@
 <template>
   <pro-table
     :columns="columns"
-    :scroll="{ y: 200 }"
     :pagination="false"
     :data-source="data"
   ></pro-table>
@@ -29,7 +28,7 @@ const columns = [
   },
 ];
 const data: DataItem[] = [];
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 4; i++) {
   data.push({
     key: i,
     date: "2016-05-03",

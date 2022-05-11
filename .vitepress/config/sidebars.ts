@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 12:53:21
  * @LastEditors: shen
- * @LastEditTime: 2022-05-10 16:03:19
+ * @LastEditTime: 2022-05-11 16:10:30
  * @Description:
  */
 const guideSidebars = [
@@ -51,12 +51,37 @@ const demoSidebars = [
         link: "/demo/basic",
       },
       {
-        text: "分页",
+        text: "分页展示",
         link: "/demo/pagination",
       },
       {
-        text: "拖拽",
+        text: "行列拖拽",
         link: "/demo/dragable",
+      },
+      {
+        text: "排序和过滤",
+        link: "/demo/filter",
+      },
+      {
+        text: "多选和单选",
+        link: "/demo/selection",
+      },
+      {
+        text: "树形和展开行",
+        link: "/demo/tree",
+      },
+      {
+        text: "合并单元格",
+        link: "/demo/group",
+      },
+    ],
+  },
+  {
+    text: "进阶",
+    children: [
+      {
+        text: "自定义样式",
+        link: "/demo/style",
       },
     ],
   },

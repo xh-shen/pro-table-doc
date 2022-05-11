@@ -1,11 +1,11 @@
 <template>
   <pro-table
     :columns="columns"
-    :sticky="{ offsetHeader: 55 }"
-    :scroll="{ y: 1000 }"
-    :pagination="false"
     :data-source="data"
+    :scroll="{ y: 200 }"
+    :pagination="false"
   ></pro-table>
+  <el-pagination background layout="prev, pager, next" :total="1000" />
 </template>
 
 <script setup lang="ts">
@@ -30,11 +30,11 @@ const columns = [
   },
 ];
 const data: DataItem[] = [];
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < 100; i++) {
   data.push({
     key: i,
     date: "2016-05-03",
-    name: "Tom",
+    name: "Tom" + i,
     address: "No. 189, Grove St, Los Angeles",
   });
 }

@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 09:00:48
  * @LastEditors: shen
- * @LastEditTime: 2022-05-09 20:11:54
+ * @LastEditTime: 2022-05-11 12:51:11
  * @Description: 
 -->
 <script setup lang="ts">
@@ -50,6 +50,9 @@ const handleCopy = async () => {
         <span>ProTable</span>
       </div>
       <div class="sub-title">基于Vue 3 & Element Plus</div>
+      <div class="sub-title" style="color: #67c23a">
+        流畅渲染百万级别数据,横向纵向虚拟滚动
+      </div>
       <div class="actions">
         <a href="/guide/quickstart">
           <el-button type="primary" class="btn" size="large">

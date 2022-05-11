@@ -61,7 +61,10 @@
 
 <script lang="ts">
 import { defineComponent, reactive, ref, watch, nextTick } from "vue";
-import { random } from "lodash-es";
+
+function random(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 export default defineComponent({
   name: "App",
@@ -201,8 +204,13 @@ export default defineComponent({
         name: `shen ${i}`,
         age,
         address: `Changchun nanhu no. ${i}`,
-        gender: i === 3 ? "男" : gender[random(0, 1)],
-        job: i === 3 ? "架构师" : age > 35 ? job2[random(1)] : job1[random(1)],
+        gender: i === 3 ? "男" : gender[random(0, 2)],
+        job:
+          i === 3
+            ? "架构师"
+            : age > 35
+            ? job2[random(0, 2)]
+            : job1[random(0, 2)],
         company: i === 3 ? "星瀚" : "中国某汽xxx 大厂",
         school: i === 3 ? "星瀚艺术" : `吉大第 ${i} 大学`,
         phone: "0431-88888888",
