@@ -2,12 +2,13 @@
  * @Author: shen
  * @Date: 2022-05-09 21:26:03
  * @LastEditors: shen
- * @LastEditTime: 2022-05-09 21:26:10
+ * @LastEditTime: 2022-05-11 20:57:07
  * @Description: 
 -->
 <script lang="ts" setup>
 import { useRoute } from "vitepress";
 import { isActive } from "../../utils";
+import { baseUrl } from "../../../utils";
 
 import type { Link } from "../../types";
 
@@ -23,7 +24,7 @@ const route = useRoute();
 <template>
   <a
     :class="{ link: true, active: isActive(route, item.link) }"
-    :href="item.link"
+    :href="`${baseUrl}${item.link}`"
     @click="$emit('close')"
   >
     <p class="link-text">{{ item.text }}</p>

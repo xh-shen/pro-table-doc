@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 09:00:48
  * @LastEditors: shen
- * @LastEditTime: 2022-05-11 12:51:11
+ * @LastEditTime: 2022-05-11 21:01:52
  * @Description: 
 -->
 <script setup lang="ts">
@@ -11,6 +11,7 @@ import clipboardCopy from "clipboard-copy";
 import { ElMessage } from "element-plus";
 import { DocumentCopy, Check } from "@element-plus/icons-vue";
 import BasicDemoVue from "./basic-demo.vue";
+import { baseUrl } from "../../../utils";
 
 const copied = ref(false);
 
@@ -54,7 +55,7 @@ const handleCopy = async () => {
         流畅渲染百万级别数据,横向纵向虚拟滚动
       </div>
       <div class="actions">
-        <a href="/guide/quickstart">
+        <a :href="`${baseUrl}/guide/quickstart`">
           <el-button type="primary" class="btn" size="large">
             <span class="btn-icon"></span>
             开始使用

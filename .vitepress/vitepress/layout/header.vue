@@ -2,14 +2,15 @@
  * @Author: shen
  * @Date: 2022-05-09 11:54:15å
  * @LastEditors: shen
- * @LastEditTime: 2022-05-10 09:39:33
+ * @LastEditTime: 2022-05-11 20:58:42
  * @Description: 
 -->
 <script setup lang="ts">
-import { useData, inBrowser } from "vitepress";
+import { useData } from "vitepress";
 
 import useSidebar from "../hooks/useSidebar";
 import VMenu from "./navbar/menu.vue";
+import { baseUrl } from "../../utils";
 
 const { hasSidebar } = useSidebar();
 // const themeEnabled = useFeatureFlag('theme')
@@ -22,7 +23,7 @@ const { theme } = useData();
     <div class="navbar-wrapper">
       <div class="header-container">
         <div class="logo-container">
-          <a href="/">
+          <a :href="`${baseUrl}/`">
             <img class="logo" src="/images/logo_big.png" alt="shen" />
           </a>
         </div>

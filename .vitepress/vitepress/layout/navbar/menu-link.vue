@@ -1,8 +1,16 @@
+<!--
+ * @Author: shen
+ * @Date: 2022-05-09 14:49:42
+ * @LastEditors: shen
+ * @LastEditTime: 2022-05-11 20:54:09
+ * @Description: 
+-->
 <script lang="ts" setup>
 import { useRoute } from "vitepress";
 import { useStorage } from "@vueuse/core";
 import VLink from "../../components/common/link.vue";
 import { isActiveLink } from "../../utils";
+import { baseUrl } from "../../../utils";
 
 import type { Link } from "../../types";
 const USER_VISITED_NEW_RESOURCE_PAGE = "USER_VISITED_NEW_RESOURCE_PAGE";
@@ -34,7 +42,7 @@ const onNavClick = (item: Link) => {
         !!item.activeMatch
       ),
     }"
-    :href="item.link"
+    :href="`${baseUrl}${item.link}`"
     :no-icon="true"
     @click="onNavClick(item)"
   >
