@@ -11,6 +11,7 @@
       :row-selection="rowSelection"
       :custom-row="customRow"
       @resizeColumn="handleResize"
+      @row-drag-end="onRowDragEnd"
     >
       <template #footer>
         <div class="table-footer">更多功能点击右上角查看更多示例！！！</div>
@@ -308,8 +309,12 @@ export default defineComponent({
     const handleResize = (w, col) => {
       col.width = w;
     };
+    const onRowDragEnd = (options) => {
+      console.log(options);
+    };
     return {
       handleResize,
+      onRowDragEnd,
       visible,
       tableRef,
       dataSource,

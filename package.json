@@ -30,6 +30,7 @@
     "clipboard-copy": "^4.0.1",
     "element-plus": "^2.2.6",
     "nprogress": "^0.2.0",
-    "prism-theme-vars": "^0.2.2"
+    "prism-theme-vars": "^0.2.2",
+    "vue": "^3.2.27"
   }
 }
