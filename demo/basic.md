@@ -72,6 +72,16 @@ basic/stickyed
 
 :::
 
+## 自动表头高度
+
+当自动表头高度时，表头部分会降级到全量渲染。
+
+:::demo 设置`auto-header-height` 为 `true`，拖动第一列查看效果吧。
+
+basic/auto-header-height
+
+:::
+
 ## 固定高度
 
 固定表格高度，不受内容多少的影响。
