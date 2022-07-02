@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 12:53:21
  * @LastEditors: shen
- * @LastEditTime: 2022-05-11 20:56:01
+ * @LastEditTime: 2022-07-02 23:13:01
  * @Description:
  */
 const guideSidebars = [
@@ -73,6 +73,10 @@ const demoSidebars = [
       {
         text: "合并单元格",
         link: "/demo/group",
+      },
+      {
+        text: "服务端获取",
+        link: "/demo/request",
       },
     ],
   },
