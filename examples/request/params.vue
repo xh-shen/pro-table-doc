@@ -1,8 +1,10 @@
 <template>
-  <pro-table :columns="columns" :request="request"></pro-table>
+  <pro-table :columns="columns" :request="request" :params="params"></pro-table>
 </template>
 
 <script setup lang="ts">
+import { reactive } from "vue";
+
 interface DataItem {
   key: string;
   name: string;
@@ -26,6 +28,11 @@ const columns = [
     ellipsis: true,
   },
 ];
+
+const params = reactive({
+  name: "1",
+  age: 12,
+});
 
 const request = (params) => {
   console.log(params);
@@ -69,4 +76,8 @@ const request = (params) => {
     }, 1000);
   });
 };
+
+setTimeout(() => {
+  params.name = "222";
+}, 2000);
 </script>

@@ -1,8 +1,10 @@
 <template>
-  <pro-table :columns="columns" :request="request"></pro-table>
+  <pro-table :columns="columns" :request="request" :params="params"></pro-table>
 </template>
 
 <script setup lang="ts">
+import { reactive } from "vue";
+
 interface DataItem {
   key: string;
   name: string;
@@ -14,18 +16,33 @@ const columns = [
   {
     title: "Name",
     dataIndex: "name",
+    filterType: "text",
+    sorter: true,
     ellipsis: true,
   },
   {
     title: "Age",
     dataIndex: "age",
+    filterType: "number",
+    sorter: true,
   },
   {
     title: "Address",
     dataIndex: "address",
     ellipsis: true,
+    filters: [
+      { text: "London", value: "London" },
+      { text: "New York", value: "New York" },
+    ],
+    filterType: "radio",
+    sorter: true,
   },
 ];
+
+const params = reactive({
+  name: "1",
+  age: 12,
+});
 
 const request = (params) => {
   console.log(params);
