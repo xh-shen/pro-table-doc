@@ -6,13 +6,23 @@
       :columns="columns"
       :data-source="dataSource"
       :pagination="false"
-      :scroll="{ y: 400 }"
+      :height="600"
       :row-height="54"
       :row-selection="rowSelection"
       :custom-row="customRow"
+      header-title="高性能表格"
+      :toolbar="{
+        subTitle: '百万级数据展示',
+        tooltip: '横纵虚拟滚动',
+        search: true,
+      }"
       @resizeColumn="handleResize"
       @row-drag-end="onRowDragEnd"
     >
+      <template #actions>
+        <el-button type="primary">添加</el-button>
+        <el-button type="danger" plain>删除</el-button>
+      </template>
       <template #footer>
         <div class="table-footer">更多功能点击右上角查看更多示例！！！</div>
       </template>
@@ -197,12 +207,12 @@ export default defineComponent({
     const income1 = [12000, 8900, 18000, 13000, 6800];
     const income2 = [2000, 8900, 8000, 3000, 6800];
 
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 100000; i++) {
       const age = random(18, 40);
       const item = {
         key: i,
         id: "12345678909876xxxx",
-        name: `shen ${i}`,
+        name: `shen ${i + 1}`,
         age,
         address: `Changchun nanhu no. ${i}`,
         gender: i === 3 ? "男" : gender[random(0, 2)],
@@ -343,7 +353,7 @@ export default defineComponent({
       handleChange,
       handleDelete,
       customRow: (record) => {
-        if (record.name === "shen 3") {
+        if (record.name === "shen 4") {
           return {
             style: {
               background: "#fef3ee",

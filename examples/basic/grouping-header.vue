@@ -1,3 +1,10 @@
+<!--
+ * @Author: shen
+ * @Date: 2022-05-11 09:28:47
+ * @LastEditors: shen
+ * @LastEditTime: 2022-07-18 15:15:52
+ * @Description: 
+-->
 <template>
   <pro-table
     :columns="columns"
@@ -27,14 +34,17 @@ const columns = [
     children: [
       {
         title: "Address1",
+        key: "address1",
         dataIndex: "address",
       },
       {
         title: "Address2",
+        key: "address2",
         dataIndex: "address",
       },
       {
         title: "Address3",
+        key: "address3",
         dataIndex: "address",
       },
     ],

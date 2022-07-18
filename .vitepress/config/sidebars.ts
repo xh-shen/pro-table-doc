@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 12:53:21
  * @LastEditors: shen
- * @LastEditTime: 2022-07-02 23:13:01
+ * @LastEditTime: 2022-07-07 09:12:48
  * @Description:
  */
 const guideSidebars = [
@@ -77,6 +77,10 @@ const demoSidebars = [
       {
         text: "服务端获取",
         link: "/demo/request",
+      },
+      {
+        text: "工具栏",
+        link: "/demo/toolbar",
       },
     ],
   },

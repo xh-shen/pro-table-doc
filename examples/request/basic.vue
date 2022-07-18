@@ -1,5 +1,12 @@
+<!--
+ * @Author: shen
+ * @Date: 2022-07-02 23:12:17
+ * @LastEditors: shen
+ * @LastEditTime: 2022-07-12 15:52:50
+ * @Description: 
+-->
 <template>
-  <pro-table :columns="columns" :request="request"></pro-table>
+  <pro-table :columns="columns" :request="request" :options="false"></pro-table>
 </template>
 
 <script setup lang="ts">

@@ -37,21 +37,25 @@ export default defineComponent({
       },
       {
         title: "Column 1",
+        key: "address1",
         dataIndex: "address",
       },
       {
         title: "Column 2",
+        key: "address2",
         dataIndex: "address",
       },
       {
         title: "Column 3",
+        key: "address3",
         dataIndex: "address",
       },
       {
         title: "Column 4",
+        key: "address4",
         dataIndex: "address",
       },
-      { title: "Column 5", dataIndex: "address" },
+      { title: "Column 5", key: "address5", dataIndex: "address" },
     ];
     const data: DataItem[] = [];
     for (let i = 0; i < 1000; i++) {
