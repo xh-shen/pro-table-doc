@@ -115,14 +115,16 @@ export default defineComponent({
         resizable: true,
         ellipsis: true,
         rowDrag: true,
+        filterType: "text",
       },
       {
         title: "年龄",
-        width: 80,
+        width: 120,
         dataIndex: "age",
         key: "age",
         resizable: true,
         align: "center",
+        filterType: "number",
         sorter: (a: any, b: any) => a.age - b.age,
       },
       {
@@ -138,11 +140,23 @@ export default defineComponent({
         dataIndex: "gender",
         align: "center",
         width: 70,
+        filterType: "checkbox",
+        filters: [
+          { text: "男", value: "男" },
+          { text: "女", value: "女" },
+        ],
       },
       {
         title: "职业",
         dataIndex: "job",
         width: 150,
+        filterType: "radio",
+        filters: [
+          { text: "前端工程师", value: "前端工程师" },
+          { text: "后端工程师", value: "后端工程师" },
+          { text: "产品经理", value: "产品经理" },
+          { text: "项目经理", value: "项目经理" },
+        ],
       },
       {
         title: "公司",
@@ -207,7 +221,7 @@ export default defineComponent({
     const income1 = [12000, 8900, 18000, 13000, 6800];
     const income2 = [2000, 8900, 8000, 3000, 6800];
 
-    for (let i = 0; i < 100000; i++) {
+    for (let i = 0; i < 10000; i++) {
       const age = random(18, 40);
       const item = {
         key: i,
@@ -250,6 +264,7 @@ export default defineComponent({
     }
     const rowSelection = reactive({
       type: "checkbox",
+      // selections: true,
       getCheckboxProps: (record: any) => {
         if (record.key === 3) {
           return { disabled: true };

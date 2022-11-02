@@ -2,7 +2,7 @@
  * @Author: shen
  * @Date: 2022-05-09 12:53:21
  * @LastEditors: shen
- * @LastEditTime: 2022-07-07 09:12:48
+ * @LastEditTime: 2022-07-19 09:38:15
  * @Description:
  */
 const guideSidebars = [
@@ -81,6 +81,10 @@ const demoSidebars = [
       {
         text: "工具栏",
         link: "/demo/toolbar",
+      },
+      {
+        text: "可编辑表格",
+        link: "/demo/editable",
       },
     ],
   },
